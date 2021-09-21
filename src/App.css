@@ -1,3 +1,7 @@
+body {
+  font-family: 'Inter';
+}
+
 .App {
   text-align: center;
 }
@@ -5,12 +9,6 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +26,97 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  box-shadow: 0 4px 10px -2px lightgrey;
+}
+
+.card-title {
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.btn-link {
+  text-decoration: none;
+  color: gray;
+  margin-right: 0.8em;
+}
+
+.hero-title {
+  letter-spacing: 0.17em;
+  font-weight: 800;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+}
+
+.ls-17 {
+  letter-spacing: 0.17em;
+}
+
+.card {
+  box-shadow: 0 0 0 3px lightgrey;
+  border-radius: 20px;
+  border-width: 0px !important;
+  box-shadow: 2px 5px 10px lightgrey !important;
+  /*border-color: #1087BA;*/
+}
+
+.wv-card-button {
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 30px;
+  box-shadow: 2px 5px 10px lightgrey !important;
+}
+
+.cards-row {
+  margin: auto;
+}
+
+.card-img {
+  object-fit: cover;
+}
+
+.blue-grad {
+  background-image: linear-gradient(#07ABF2, black)
+}
+
+.hero-secondary-title {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.hero-secondary {
+  color: white;
+}
+
+.white-link {
+  color:white;
+}
+
+.hero-secondary-sm {
+  font-weight: 400;
+}
+
+.hero-secondary-body {
+  font-weight: 300;
+}
+
+.btn-success:hover .btn-success:click {
+  background-color: #0CC879;
+  border-color: #0CC879 !important;
+}
+.btn-success {
+  background-color: #0CC879;
+  border-color: #0CC879 !important;
+}
+
+.swal-button--install {
+  background-color: #0CC879 !important;
+  border-color: #0CC879 !important;
+}
+
+.nav-logo {
+  max-height: 50px;
 }
