@@ -95,10 +95,10 @@ export default class Cards extends Component {
                permissions = []
             }
         if (permissions.length === 0 && window.arweaveWallet) {
-                window.arweaveWallet.connect('ACCESS_ADDRESS')
+                window.arweaveWallet.connect(['ACCESS_ADDRESS'])
         } else {
-            const addr = window.arweaveWallet && await window.arweaveWallet.getActiveAddress()
-            this.setState({addr: addr})
+            const addr = await window.arweaveWallet.getActiveAddress()
+            this.setState({addr})
             return addr
         }
     }
