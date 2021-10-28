@@ -7,7 +7,7 @@ export default class NftBlock extends Component {
 
     render() {
         return(
-            <div className="blue-grad">
+            <div className="">
                 <Container className="hero-secondary">
                     <h1 className="hero-secondary-title">More goodness for you!</h1>
                     <h2 className="p-2">After completing the above, you get a limited edition NFT.</h2>

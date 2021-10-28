@@ -6,7 +6,6 @@ import Arconnect from '../assets/arconnect2.png'
 import Arverify from '../assets/arverify2.png'
 import { BsCheck } from 'react-icons/bs'
 import Arweave from 'arweave'
-import ArDB from "ardb";
 import Swal from 'sweetalert2'
 
 
@@ -17,9 +16,6 @@ const arweave = Arweave.init({
   timeout: 100000,
   logging: false,
 });
-
-const ardb = new ArDB(arweave);
-
 
 export default class Cards extends Component {
 
@@ -153,14 +149,9 @@ export default class Cards extends Component {
     }
 
     checkBalance = async () => {
-      arweave.wallets.getBalance(this.state.addr).then((balance) => {
-        let winston = balance;
-        let ar = arweave.ar.winstonToAr(balance);
-        console.log(winston);
-        //125213858712
-        console.log(ar);
-        //0.125213858712
-    });
+      let balance = await arweave.wallets.getBalance(this.state.addr)
+      let ar = arweave.ar.winstonToAr(balance);
+      return ar;
     }
 
     async componentDidMount() {
@@ -168,7 +159,6 @@ export default class Cards extends Component {
             this.setState({arconnectInstalled: true})
         });
         await this.checkIfVerified()
-        await this.checkBalance() 
     }
 
     verificationStatus = () => {
@@ -187,8 +177,19 @@ export default class Cards extends Component {
         }
     }
 
-    onTwitterClick = () => {
-        window.open('https://twitter.com', '_blank');
+    onTwitterClick = async () => {
+      await this.walletAddr()
+      let balance = await this.checkBalance()
+      let verifyAddrTweet = `Verifying my @onlyarweave wallet address to get my Immortal Jellyfish NFT! ${this.state.addr}`
+      let shareArVerifyTweet = `👋 Arweave friends! Help prove that I'm a human and verify my address on ArVerify (getting my @onlyarweave Immortal Jellyfish NFT!): https://trust.arverify.org/verify/${this.state.addr}`
+      let tweetText
+      console.log(balance)
+      if (balance > 0.499) { 
+        tweetText = shareArVerifyTweet
+       } else {
+         tweetText = verifyAddrTweet
+       }
+      tweetText && window.open(`https://twitter.com/intent/tweet?text=${tweetText}`, '_blank');
     }
 /*
     onArDriveClick = async () => {
@@ -231,56 +232,56 @@ export default class Cards extends Component {
 
     render() {
         return(
-            <div className="mt-4 cards-row d-flex">
+            <div className="cards-row d-flex">
                 <Container fluid className="mb-4">
-                    <h1 className="mb-2 p-3 hero-title">Store anything online, permanently.</h1>
+                    <h1 className="mb-2 p-3 hero-title">Get a limited edition NFT on Arweave.</h1>
                     <Row className="">
                         <Col xs={12} md={4}>
-                            <h2 className="pt-3">1</h2>
+                            <h2 className="pt-3 text-white">1</h2>
                            <Card border="primary" className="">
-                            <Card.Title><h4>Get the ArConnect</h4>
-                            <h4>Browser wallet extension</h4></Card.Title>
-                            <Card.Img className="p-5" alt="arconnect logo" src={Arconnect}/>
+                            <Card.Title><h5>Get the ArConnect</h5>
+                            <h5>Browser wallet extension</h5></Card.Title>
+                            <Card.Img alt="arconnect logo" src={Arconnect}/>
                             <div className="p-1">
                                 {this.state.arconnectInstalled ?
-                                <Button variant="success" className="wv-card-button"><BsCheck/> ArConnect installed</Button> :
-                                <Button onClick={() => this.onInstallArConnectClick()} variant="default" className="wv-card-button">Install ArConnect</Button>
+                                <Button variant="success" className="wv-card-button wv-card-button-alt"><BsCheck/> ArConnect installed</Button> :
+                                <Button onClick={() => this.onInstallArConnectClick()} variant="default" className="wv-card-button wv-card-button-alt">Install ArConnect</Button>
                                 }
+                                <Card.Text className="small p-2">This is where you'll keep your $AR tokens</Card.Text>
                             </div>
                             </Card>
                         </Col>
                       
                         <Col xs={12} md={4}>
-                            <h2 className="pt-3">2</h2>
+                            <h2 className="pt-3 text-white">2</h2>
                            <Card border="primary">
-                            <Card.Title><h4>Tweet to get your 0.02 AR</h4>
-                            <h4>tokens (~$1.19 in value) </h4></Card.Title>
-                            <Card.Img className="p-5" alt="ardrive logo" src={Twitter}/>
+                            <Card.Title><h5>Tweet to get your 0.02 AR</h5>
+                            <h5>tokens (~$1.19 in value) </h5></Card.Title>
+                            <Card.Img alt="ardrive logo" src={Twitter}/>
                             <div className="p-1">
-                                { this.state.ardriveUploads ? // verifiedStatus
-                                    <Button variant="success" className="wv-card-button"><BsCheck/>Done</Button> :
-                                    <Button variant="default" onClick={() => this.onTwitterClick()} className="wv-card-button">Tweet to get verified</Button>
-                                }
+                                <Button variant="default" onClick={() => this.onTwitterClick()} className="wv-card-button wv-card-button-twitter">Tweet to get verified</Button>
+                                <Card.Text className="small p-2">We'll need to verify that you're a human</Card.Text>
                             </div>
                             </Card>
                         </Col>
                                                <Col xs={12} md={4}>
-                            <h2 className="pt-3">3</h2>
+                            <h2 className="pt-3 text-white">3</h2>
                             <Card border="primary">
-                            <Card.Title><h4>Get a limited edition</h4><h4>Arweave NFT</h4></Card.Title>
-                            <Card.Img className="p-5" alt="arverify-logo" src={Arverify}/>
+                            <Card.Title><h5>Get a limited edition</h5><h5>Arweave NFT</h5></Card.Title>
+                            <Card.Img alt="arverify-logo" src={Arverify}/>
                             <div className="p-1">
                                 <Button
                                     variant={this.state.verifiedClass || 'default'}
-                                    className="wv-card-button"
+                                    className="wv-card-button wv-card-button-alt"
                                     onClick={() => this.onArVerifyClick()}>
                                     {this.verificationStatus()}
                                 </Button>
+                                <Card.Text className="small p-2">Get a 75% verification score to get the NFT</Card.Text>
                             </div>
                             </Card>
                         </Col>
-  <span className="mt-4 ls-17">need more details?</span>
-                        <span className="ls-17 mt-1"><a href="/">watch the video</a></span>
+  <span className="mt-4 text-white ls-17">need more details?</span>
+                        <span className="ls-17 mt-1"><a className="white-link" href="/">watch the video</a></span>
 
  
 

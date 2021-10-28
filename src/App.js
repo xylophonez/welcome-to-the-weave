@@ -7,9 +7,11 @@ import NftBlock from './components/nft_block.jsx'
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Cards/>
-      <NftBlock/>
+        <Header/>
+      <div className="blue-grad">
+        <Cards/>
+        <NftBlock/>
+      </div>
     </div>
   );
 }

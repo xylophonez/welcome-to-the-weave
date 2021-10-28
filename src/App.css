@@ -27,7 +27,7 @@ body {
 }
 
 .navbar {
-  box-shadow: 0 4px 10px -2px lightgrey;
+  box-shadow: 0 4px 10px -2px gray;
 }
 
 .card-title {
@@ -47,6 +47,7 @@ body {
   font-weight: 800;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
+  color: white;
 }
 
 .ls-17 {
@@ -57,7 +58,7 @@ body {
   box-shadow: 0 0 0 3px lightgrey;
   border-radius: 20px;
   border-width: 0px !important;
-  box-shadow: 2px 5px 10px lightgrey !important;
+  box-shadow: 2px 5px 10px #4A4A4A !important;
   /*border-color: #1087BA;*/
 }
 
@@ -66,6 +67,25 @@ body {
   margin-bottom: 1em;
   border-radius: 30px;
   box-shadow: 2px 5px 10px lightgrey !important;
+}
+
+.wv-card-button-alt {
+  background-color: #004179;
+  color: white;
+}
+
+.wv-card-button-alt:hover .wv-card-button-alt:click {
+  background-color: #004179;
+  color: white !important;
+}
+
+.wv-card-button-twitter {
+  background-color: #1D9BF0 !important;
+  color: white !important;
+}
+
+.btn:focus, .btn:hover {
+  color: white !important;
 }
 
 .cards-row {
@@ -85,14 +105,16 @@ body {
   padding-bottom: 0.5em;
   font-weight: 300;
   font-style: italic;
+  color: white;
 }
+
 
 .hero-secondary {
   color: white;
 }
 
 .white-link {
-  color:white;
+  color:white !important;
 }
 
 .hero-secondary-sm {
