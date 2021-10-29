@@ -7,6 +7,7 @@ import Arverify from '../assets/arverify2.png'
 import { BsCheck } from 'react-icons/bs'
 import Arweave from 'arweave'
 import Swal from 'sweetalert2'
+import './cards.css'
 
 
 const arweave = Arweave.init({
@@ -26,7 +27,7 @@ export default class Cards extends Component {
         }
     }
 
-    arconnect = () => { 
+    arconnect = () => {
             const installed = window.arweaveWallet ? true : false
             return installed;
     }
@@ -42,7 +43,7 @@ export default class Cards extends Component {
             confirmButtonText: `${app === 'ArDrive' ? 'Use' : 'Install'} ${app}`,
             confirmButtonColor: '#07ABF2',
             denyButtonColor: 'gray'
-            
+
         }).then((value) => {
             if (value.isConfirmed) {
                     window.open(url, '_blank').focus();
@@ -60,7 +61,7 @@ export default class Cards extends Component {
             confirmButtonText: 'Get 20% verified!',
             confirmButtonColor: '#07ABF2',
             denyButtonColor: 'gray'
-            
+
         }).then((value) => {
             if (value.isConfirmed) {
                 window.open(`https://trust.arverify.org`, '_blank').focus();
@@ -163,7 +164,7 @@ export default class Cards extends Component {
 
     verificationStatus = () => {
         try {
-          if (this.state.verification.percentage === null) { 
+          if (this.state.verification.percentage === null) {
             return 'Get verified'
          }  else if (this.state.verification.percentage > 19) {
             return 'Check verification status'
@@ -184,7 +185,7 @@ export default class Cards extends Component {
       let shareArVerifyTweet = `👋 Arweave friends! Help prove that I'm a human and verify my address on ArVerify (getting my @onlyarweave Immortal Jellyfish NFT!): https://trust.arverify.org/verify/${this.state.addr}`
       let tweetText
       console.log(balance)
-      if (balance > 0.499) { 
+      if (balance > 0.499) {
         tweetText = shareArVerifyTweet
        } else {
          tweetText = verifyAddrTweet
@@ -237,9 +238,9 @@ export default class Cards extends Component {
                     <h1 className="mb-2 p-3 hero-title">Get a limited edition NFT on Arweave.</h1>
                     <Row className="">
                         <Col xs={12} md={4}>
-                            <h2 className="pt-3 text-white">1</h2>
+                            <div className="d-sm-flex justify-content-center"><h2 className="step d-sm-flex justify-content-center align-items-center">1</h2></div>
                            <Card border="primary" className="">
-                            <Card.Title><h5>Get the ArConnect</h5>
+                            <Card.Title className="mt-sm-5"><h5>Get the ArConnect</h5>
                             <h5>Browser wallet extension</h5></Card.Title>
                             <Card.Img alt="arconnect logo" src={Arconnect}/>
                             <div className="p-1">
@@ -251,7 +252,7 @@ export default class Cards extends Component {
                             </div>
                             </Card>
                         </Col>
-                      
+
                         <Col xs={12} md={4}>
                             <h2 className="pt-3 text-white">2</h2>
                            <Card border="primary">
@@ -283,12 +284,12 @@ export default class Cards extends Component {
   <span className="mt-4 text-white ls-17">need more details?</span>
                         <span className="ls-17 mt-1"><a className="white-link" href="/">watch the video</a></span>
 
- 
+
 
                     </Row>
                 </Container>
             </div>
-            
+
         )
     }
 }
