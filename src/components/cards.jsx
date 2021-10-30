@@ -4,6 +4,7 @@ import { getVerification } from "arverify";
 import Twitter from '../assets/twitter.png'
 import Arconnect from '../assets/arconnect2.png'
 import Arverify from '../assets/arverify2.png'
+import Ardrive from '../assets/ardrive2.png'
 import { BsCheck } from 'react-icons/bs'
 import Arweave from 'arweave'
 import Swal from 'sweetalert2'
@@ -26,7 +27,7 @@ export default class Cards extends Component {
         }
     }
 
-    arconnect = () => { 
+    arconnect = () => {
             const installed = window.arweaveWallet ? true : false
             return installed;
     }
@@ -42,7 +43,7 @@ export default class Cards extends Component {
             confirmButtonText: `${app === 'ArDrive' ? 'Use' : 'Install'} ${app}`,
             confirmButtonColor: '#07ABF2',
             denyButtonColor: 'gray'
-            
+
         }).then((value) => {
             if (value.isConfirmed) {
                     window.open(url, '_blank').focus();
@@ -60,7 +61,7 @@ export default class Cards extends Component {
             confirmButtonText: 'Get 20% verified!',
             confirmButtonColor: '#07ABF2',
             denyButtonColor: 'gray'
-            
+
         }).then((value) => {
             if (value.isConfirmed) {
                 window.open(`https://trust.arverify.org`, '_blank').focus();
@@ -163,7 +164,7 @@ export default class Cards extends Component {
 
     verificationStatus = () => {
         try {
-          if (this.state.verification.percentage === null) { 
+          if (this.state.verification.percentage === null) {
             return 'Get verified'
          }  else if (this.state.verification.percentage > 19) {
             return 'Check verification status'
@@ -184,7 +185,7 @@ export default class Cards extends Component {
       let shareArVerifyTweet = `👋 Arweave friends! Help prove that I'm a human and verify my address on ArVerify (getting my @onlyarweave Immortal Jellyfish NFT!): https://trust.arverify.org/verify/${this.state.addr}`
       let tweetText
       console.log(balance)
-      if (balance > 0.499) { 
+      if (balance > 0.499) {
         tweetText = shareArVerifyTweet
        } else {
          tweetText = verifyAddrTweet
@@ -251,13 +252,13 @@ export default class Cards extends Component {
                             </div>
                             </Card>
                         </Col>
-                      
+
                         <Col xs={12} md={4}>
                             <h2 className="pt-3 text-white">2</h2>
                            <Card border="primary">
                             <Card.Title><h5>Tweet to get your 0.02 AR</h5>
                             <h5>tokens (~$1.19 in value) </h5></Card.Title>
-                            <Card.Img alt="ardrive logo" src={Twitter}/>
+                            <Card.Img alt="twitter logo" src={Twitter}/>
                             <div className="p-1">
                                 <Button variant="default" onClick={() => this.onTwitterClick()} className="wv-card-button wv-card-button-twitter">Tweet to get verified</Button>
                                 <Card.Text className="small p-2">We'll need to verify that you're a human</Card.Text>
@@ -267,8 +268,8 @@ export default class Cards extends Component {
                                                <Col xs={12} md={4}>
                             <h2 className="pt-3 text-white">3</h2>
                             <Card border="primary">
-                            <Card.Title><h5>Get a limited edition</h5><h5>Arweave NFT</h5></Card.Title>
-                            <Card.Img alt="arverify-logo" src={Arverify}/>
+                            <Card.Title><h5>Upload your very first</h5><h5>permaphoto</h5></Card.Title>
+                            <Card.Img alt="ardrive logo" src={Ardrive}/>
                             <div className="p-1">
                                 <Button
                                     variant={this.state.verifiedClass || 'default'}
@@ -276,19 +277,19 @@ export default class Cards extends Component {
                                     onClick={() => this.onArVerifyClick()}>
                                     {this.verificationStatus()}
                                 </Button>
-                                <Card.Text className="small p-2">Get a 75% verification score to get the NFT</Card.Text>
+                                <Card.Text className="small p-2">Upload a photo for free</Card.Text>
                             </div>
                             </Card>
                         </Col>
   <span className="mt-4 text-white ls-17">need more details?</span>
                         <span className="ls-17 mt-1"><a className="white-link" href="/">watch the video</a></span>
 
- 
+
 
                     </Row>
                 </Container>
             </div>
-            
+
         )
     }
 }
