@@ -17,7 +17,7 @@ export default class NftBlock extends Component {
                     <h5 className="hero-secondary-sm p-2">The first 10,000 individuals to reach a verification score of 75 get one.</h5>
                     <h5 className="hero-secondary-sm p-2">Only <strong>597</strong> immortal jellyfish left.</h5>
                     <h5 className="hero-secondary-sm p-2 pb-4">visit <a className="white-link" href="https://immortaljelly.fish">immortaljelly.fish</a> to see them all.</h5>
-                    <Image alt="atomic nft logo" src={atomic} />
+                    <Image alt="atomic nft logo" src={atomic} width="64px"/>
                     <p className="small p-2">all immortal jellyfish are atomic NFTs</p>
                 </Container>
             </div>
