@@ -237,10 +237,10 @@ export default class Cards extends Component {
                 <Container fluid className="mb-4">
                     <h1 className="mb-2 p-3 hero-title">Get a limited edition NFT on Arweave.</h1>
                     <Row className="">
-                        <Col xs={12} md={4}>
-                            <div className="d-sm-flex justify-content-center"><h2 className="step d-sm-flex justify-content-center align-items-center">1</h2></div>
+                        <Col xs={12} md={4} className="mb-4">
+                            <div className="d-flex justify-content-center"><h2 className="step d-flex justify-content-center align-items-center">1</h2></div>
                            <Card border="primary" className="">
-                            <Card.Title className="mt-sm-5"><h5>Get the ArConnect</h5>
+                            <Card.Title className="mt-5"><h5>Get the ArConnect</h5>
                             <h5>Browser wallet extension</h5></Card.Title>
                             <Card.Img alt="arconnect logo" src={Arconnect}/>
                             <div className="p-1">
@@ -253,10 +253,10 @@ export default class Cards extends Component {
                             </Card>
                         </Col>
 
-                        <Col xs={12} md={4}>
-                            <h2 className="pt-3 text-white">2</h2>
+                        <Col xs={12} md={4} className="mb-4">
+                        <div className="d-flex justify-content-center"><h2 className="step d-flex justify-content-center align-items-center">2</h2></div>
                            <Card border="primary">
-                            <Card.Title><h5>Tweet to get your 0.02 AR</h5>
+                            <Card.Title className="mt-5"><h5>Tweet to get your 0.02 AR</h5>
                             <h5>tokens (~$1.19 in value) </h5></Card.Title>
                             <Card.Img alt="ardrive logo" src={Twitter}/>
                             <div className="p-1">
@@ -265,10 +265,10 @@ export default class Cards extends Component {
                             </div>
                             </Card>
                         </Col>
-                                               <Col xs={12} md={4}>
-                            <h2 className="pt-3 text-white">3</h2>
+                                               <Col xs={12} md={4} className="mb-4">
+                        <div className="d-flex justify-content-center"><h2 className="step d-flex justify-content-center align-items-center">3</h2></div>
                             <Card border="primary">
-                            <Card.Title><h5>Get a limited edition</h5><h5>Arweave NFT</h5></Card.Title>
+                            <Card.Title className="mt-5"><h5>Get a limited edition</h5><h5>Arweave NFT</h5></Card.Title>
                             <Card.Img alt="arverify-logo" src={Arverify}/>
                             <div className="p-1">
                                 <Button
