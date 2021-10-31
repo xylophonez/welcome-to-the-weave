@@ -8,6 +8,7 @@ import Ardrive from '../assets/ardrive2.png'
 import { BsCheck } from 'react-icons/bs'
 import Arweave from 'arweave'
 import Swal from 'sweetalert2'
+import './cards.css'
 
 const arweave = Arweave.init({
   host: 'arweave.net',
@@ -261,10 +262,14 @@ export default class Cards extends Component {
             Get a limited edition NFT on Arweave.
           </h1>
           <Row className=''>
-            <Col xs={12} md={4}>
-              <h2 className='pt-3 text-white'>1</h2>
+            <Col xs={12} md={4} className='mb-4'>
+              <div className='d-flex justify-content-center'>
+                <h2 className='step d-flex justify-content-center align-items-center'>
+                  1
+                </h2>
+              </div>
               <Card border='primary' className=''>
-                <Card.Title>
+                <Card.Title className='mt-5'>
                   <h5>Get the ArConnect</h5>
                   <h5>Browser wallet extension</h5>
                 </Card.Title>
@@ -293,14 +298,18 @@ export default class Cards extends Component {
               </Card>
             </Col>
 
-            <Col xs={12} md={4}>
-              <h2 className='pt-3 text-white'>2</h2>
+            <Col xs={12} md={4} className='mb-4'>
+              <div className='d-flex justify-content-center'>
+                <h2 className='step d-flex justify-content-center align-items-center'>
+                  2
+                </h2>
+              </div>
               <Card border='primary'>
-                <Card.Title>
+                <Card.Title className='mt-5'>
                   <h5>Tweet to get your 0.02 AR</h5>
                   <h5>tokens (~$1.19 in value) </h5>
                 </Card.Title>
-                <Card.Img alt='twitter logo' src={Twitter} />
+                <Card.Img alt='ardrive logo' src={Twitter} />
                 <div className='p-1'>
                   <Button
                     variant='default'
@@ -315,10 +324,14 @@ export default class Cards extends Component {
                 </div>
               </Card>
             </Col>
-            <Col xs={12} md={4}>
-              <h2 className='pt-3 text-white'>3</h2>
+            <Col xs={12} md={4} className='mb-4'>
+              <div className='d-flex justify-content-center'>
+                <h2 className='step d-flex justify-content-center align-items-center'>
+                  3
+                </h2>
+              </div>
               <Card border='primary'>
-                <Card.Title>
+                <Card.Title className='mt-5'>
                   <h5>Upload your very first</h5>
                   <h5>permaphoto</h5>
                 </Card.Title>
