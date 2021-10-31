@@ -262,13 +262,13 @@ export default class Cards extends Component {
             Get a limited edition NFT on Arweave.
           </h1>
           <Row className=''>
-            <Col xs={12} md={4} className='mb-4'>
-              <div className='d-flex justify-content-center'>
-                <h2 className='step d-flex justify-content-center align-items-center'>
-                  1
-                </h2>
-              </div>
-              <Card border='primary' className=''>
+            <Col xs={12} md={4} className='mt-4 mb-5'>
+              <Card border='primary h-100' className=''>
+                <div className='d-flex justify-content-center'>
+                  <h2 className='step d-flex justify-content-center align-items-center'>
+                    1
+                  </h2>
+                </div>
                 <Card.Title className='mt-5'>
                   <h5>Get the ArConnect</h5>
                   <h5>Browser wallet extension</h5>
@@ -298,13 +298,13 @@ export default class Cards extends Component {
               </Card>
             </Col>
 
-            <Col xs={12} md={4} className='mb-4'>
-              <div className='d-flex justify-content-center'>
-                <h2 className='step d-flex justify-content-center align-items-center'>
-                  2
-                </h2>
-              </div>
-              <Card border='primary'>
+            <Col xs={12} md={4} className='mb-5'>
+              <Card border='primary h-100'>
+                <div className='d-flex justify-content-center'>
+                  <h2 className='step d-flex justify-content-center align-items-center'>
+                    2
+                  </h2>
+                </div>
                 <Card.Title className='mt-5'>
                   <h5>Tweet to get your 0.02 AR</h5>
                   <h5>tokens (~$1.19 in value) </h5>
@@ -324,13 +324,13 @@ export default class Cards extends Component {
                 </div>
               </Card>
             </Col>
-            <Col xs={12} md={4} className='mb-4'>
-              <div className='d-flex justify-content-center'>
-                <h2 className='step d-flex justify-content-center align-items-center'>
-                  3
-                </h2>
-              </div>
-              <Card border='primary'>
+            <Col xs={12} md={4} className='mb-3'>
+              <Card border='primary h-100'>
+                <div className='d-flex justify-content-center'>
+                  <h2 className='step d-flex justify-content-center align-items-center'>
+                    3
+                  </h2>
+                </div>
                 <Card.Title className='mt-5'>
                   <h5>Upload your very first</h5>
                   <h5>permaphoto</h5>
