@@ -261,8 +261,8 @@ export default class Cards extends Component {
           <h1 className='mb-2 p-3 hero-title'>
             Get a limited edition NFT on Arweave.
           </h1>
-          <Row className=''>
-            <Col xs={12} md={4} className='mt-4 mb-5'>
+          <Row className='mt-5'>
+            <Col xs={12} md={4} className='mb-5'>
               <Card border='primary h-100' className=''>
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
@@ -324,7 +324,7 @@ export default class Cards extends Component {
                 </div>
               </Card>
             </Col>
-            <Col xs={12} md={4} className='mb-3'>
+            <Col xs={12} md={4} className='mb-5 mb-sm-4'>
               <Card border='primary h-100'>
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
