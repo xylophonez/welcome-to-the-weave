@@ -85,7 +85,7 @@ body {
 }
 
 .btn:focus, .btn:hover {
-  color: grey !important;
+  color: black !important;
 }
 
 .cards-row {
