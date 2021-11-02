@@ -4,11 +4,11 @@ import { getVerification } from 'arverify'
 import Twitter from '../assets/twitter.png'
 import Arconnect from '../assets/arconnect2.png'
 import Arverify from '../assets/arverify2.png'
+import Ardrive from '../assets/ardrive2.png'
 import { BsCheck } from 'react-icons/bs'
 import Arweave from 'arweave'
 import Swal from 'sweetalert2'
 import './cards.css'
-
 const arweave = Arweave.init({
   host: 'arweave.net',
   port: 443,
@@ -16,7 +16,6 @@ const arweave = Arweave.init({
   timeout: 100000,
   logging: false
 })
-
 export default class Cards extends Component {
   constructor (props) {
     super()
@@ -24,12 +23,10 @@ export default class Cards extends Component {
       test: false
     }
   }
-
   arconnect = () => {
     const installed = window.arweaveWallet ? true : false
     return installed
   }
-
   triggerAppInstallAlert = (title, app, icon, url) => {
     Swal.fire({
       title: `<h4>${title}</h4>`,
@@ -48,7 +45,6 @@ export default class Cards extends Component {
       }
     })
   }
-
   triggerGetVerifiedAlert = async () => {
     Swal.fire({
       title: '<h4>Share your verification link to get verified</h4>',
@@ -66,7 +62,6 @@ export default class Cards extends Component {
       }
     })
   }
-
   onInstallArConnectClick = async () => {
     if (!this.arconnect()) {
       this.triggerAppInstallAlert(
@@ -89,7 +84,6 @@ export default class Cards extends Component {
       )
     }
   }
-
   walletAddr = async () => {
     let permissions
     try {
@@ -106,7 +100,6 @@ export default class Cards extends Component {
       return addr
     }
   }
-
   onArVerifyClick = async () => {
     if (!this.state.arconnectInstalled) {
       this.triggerAppInstallAlert(
@@ -129,7 +122,6 @@ export default class Cards extends Component {
           this.triggerGetVerifiedAlert()
         }
       }
-
       if (!v) {
         this.triggerAppInstallAlert(
           'Install ArVerify to complete this step',
@@ -138,7 +130,6 @@ export default class Cards extends Component {
           'https://arverify.org'
         )
       }
-
       if (this.state.verification.percentage === 'undefined') {
         //   this.triggerAppInstallAlert('Install ArVerify to complete this step', 'ArVerify', Arverify, 'https://arverify.org')
       }
@@ -156,31 +147,26 @@ export default class Cards extends Component {
       } else {
         //this.triggerAppInstallAlert('Install ArVerify to complete this step', 'ArVerify', Arverify, 'https://arverify.org')
       }
-
       this.setState({ test: true })
     }
   }
-
   checkIfVerified = async () => {
     await this.walletAddr()
     const verification = await getVerification(this.state.addr)
     this.setState({ verification: verification })
     return verification
   }
-
   checkBalance = async () => {
     let balance = await arweave.wallets.getBalance(this.state.addr)
     let ar = arweave.ar.winstonToAr(balance)
     return ar
   }
-
   async componentDidMount () {
     window.addEventListener('arweaveWalletLoaded', () => {
       this.setState({ arconnectInstalled: true })
     })
     await this.checkIfVerified()
   }
-
   verificationStatus = () => {
     try {
       if (this.state.verification.percentage === null) {
@@ -195,7 +181,6 @@ export default class Cards extends Component {
       return 'Click to check verification status'
     }
   }
-
   onTwitterClick = async () => {
     // await this.walletAddr()
     // let balance = await this.checkBalance()
@@ -212,7 +197,6 @@ export default class Cards extends Component {
         '_blank'
       )
       this.setState({ verifiedClassTwitter: 'success' })
-
   }
   /*
     onArDriveClick = async () => {
@@ -252,7 +236,6 @@ export default class Cards extends Component {
       return 'default'
     }
   }
-
   render () {
     return (
       <div className='cards-row d-flex'>
@@ -260,14 +243,14 @@ export default class Cards extends Component {
           <h1 className='mb-2 p-3 hero-title'>
             Get a limited edition NFT on Arweave.
           </h1>
-          <Row className=''>
-            <Col xs={12} md={4} className='mb-4'>
-              <div className='d-flex justify-content-center'>
-                <h2 className='step d-flex justify-content-center align-items-center'>
-                  1
-                </h2>
-              </div>
-              <Card border='primary' className=''>
+          <Row className='mt-5'>
+            <Col xs={12} md={4} className='mb-5'>
+              <Card border='primary h-100' className=''>
+                <div className='d-flex justify-content-center'>
+                  <h2 className='step d-flex justify-content-center align-items-center'>
+                    1
+                  </h2>
+                </div>
                 <Card.Title className='mt-5'>
                   <h5>Get the ArConnect</h5>
                   <h5>Browser wallet extension</h5>
@@ -277,7 +260,7 @@ export default class Cards extends Component {
                   {this.state.arconnectInstalled ? (
                     <Button
                       variant='success'
-                      className='wv-card-button wv-card-button-alt'
+                      className='wv-card-button wv-card-button-success'
                     >
                       <BsCheck /> ArConnect installed
                     </Button>
@@ -297,13 +280,13 @@ export default class Cards extends Component {
               </Card>
             </Col>
 
-            <Col xs={12} md={4} className='mb-4'>
-              <div className='d-flex justify-content-center'>
-                <h2 className='step d-flex justify-content-center align-items-center'>
-                  2
-                </h2>
-              </div>
-              <Card border='primary'>
+            <Col xs={12} md={4} className='mb-5'>
+              <Card border='primary h-100'>
+                <div className='d-flex justify-content-center'>
+                  <h2 className='step d-flex justify-content-center align-items-center'>
+                    2
+                  </h2>
+                </div>
                 <Card.Title className='mt-5'>
                   <h5>Tweet to get your 0.02 AR</h5>
                   <h5>tokens (~$1.19 in value) </h5>
@@ -312,7 +295,6 @@ export default class Cards extends Component {
                 <div className='p-1'>
                   <Button
                     variant={this.state.verifiedClassTwitter || 'default'}
-
                     onClick={() => this.onTwitterClick()}
                     className='wv-card-button wv-card-button-alt'
                   >{this.state.verifiedClassTwitter === "success" && <BsCheck />}
@@ -324,18 +306,18 @@ export default class Cards extends Component {
                 </div>
               </Card>
             </Col>
-            <Col xs={12} md={4} className='mb-4'>
-              <div className='d-flex justify-content-center'>
-                <h2 className='step d-flex justify-content-center align-items-center'>
-                  3
-                </h2>
-              </div>
-              <Card border='primary'>
+            <Col xs={12} md={4} className='mb-5 mb-sm-4'>
+              <Card border='primary h-100'>
+                <div className='d-flex justify-content-center'>
+                  <h2 className='step d-flex justify-content-center align-items-center'>
+                    3
+                  </h2>
+                </div>
                 <Card.Title className='mt-5'>
-                  <h5>Get a limited edition</h5>
-                  <h5>Arweave NFT</h5>
+                  <h5>Upload your very first</h5>
+                  <h5>permaphoto</h5>
                 </Card.Title>
-                <Card.Img alt='arverify-logo' src={Arverify} />
+                <Card.Img alt='ardrive logo' src={Ardrive} />
                 <div className='p-1'>
                   <Button
                     variant={this.state.verifiedClass || 'default'}
@@ -345,7 +327,7 @@ export default class Cards extends Component {
                     {this.verificationStatus()}
                   </Button>
                   <Card.Text className='small p-2'>
-                    Get a 75% verification score to get the NFT
+                    Upload a photo for free
                   </Card.Text>
                 </div>
               </Card>
