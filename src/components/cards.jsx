@@ -197,22 +197,22 @@ export default class Cards extends Component {
   }
 
   onTwitterClick = async () => {
-    await this.walletAddr()
-    let balance = await this.checkBalance()
+    // await this.walletAddr()
+    // let balance = await this.checkBalance()
     let verifyAddrTweet = `Verifying my @onlyarweave wallet address to get my Immortal Jellyfish NFT! ${this.state.addr}`
     let shareArVerifyTweet = `👋 Arweave friends! Help prove that I'm a human and verify my address on ArVerify (getting my @onlyarweave Immortal Jellyfish NFT!): https://trust.arverify.org/verify/${this.state.addr}`
-    let tweetText
-    console.log(balance)
-    if (balance > 0.499) {
-      tweetText = shareArVerifyTweet
-    } else {
-      tweetText = verifyAddrTweet
-    }
-    tweetText &&
+    // console.log(balance)
+    // if (balance > 0.499) {
+    //   tweetText = shareArVerifyTweet
+    // } else {
+    //   tweetText = verifyAddrTweet
+    // }
       window.open(
-        `https://twitter.com/intent/tweet?text=${tweetText}`,
+        `https://twitter.com/intent/follow?screen_name=onlyarweave`,
         '_blank'
       )
+      this.setState({ verifiedClassTwitter: 'success' })
+
   }
   /*
     onArDriveClick = async () => {
@@ -311,10 +311,11 @@ export default class Cards extends Component {
                 <Card.Img alt='ardrive logo' src={Twitter} />
                 <div className='p-1'>
                   <Button
-                    variant='default'
+                    variant={this.state.verifiedClassTwitter || 'default'}
+
                     onClick={() => this.onTwitterClick()}
-                    className='wv-card-button wv-card-button-twitter'
-                  >
+                    className='wv-card-button wv-card-button-alt'
+                  >{this.state.verifiedClassTwitter == "success" && <BsCheck />}
                     Tweet to get verified
                   </Button>
                   <Card.Text className='small p-2'>
