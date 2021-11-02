@@ -199,8 +199,8 @@ export default class Cards extends Component {
   onTwitterClick = async () => {
     // await this.walletAddr()
     // let balance = await this.checkBalance()
-    let verifyAddrTweet = `Verifying my @onlyarweave wallet address to get my Immortal Jellyfish NFT! ${this.state.addr}`
-    let shareArVerifyTweet = `👋 Arweave friends! Help prove that I'm a human and verify my address on ArVerify (getting my @onlyarweave Immortal Jellyfish NFT!): https://trust.arverify.org/verify/${this.state.addr}`
+    // let verifyAddrTweet = `Verifying my @onlyarweave wallet address to get my Immortal Jellyfish NFT! ${this.state.addr}`
+    // let shareArVerifyTweet = `👋 Arweave friends! Help prove that I'm a human and verify my address on ArVerify (getting my @onlyarweave Immortal Jellyfish NFT!): https://trust.arverify.org/verify/${this.state.addr}`
     // console.log(balance)
     // if (balance > 0.499) {
     //   tweetText = shareArVerifyTweet
