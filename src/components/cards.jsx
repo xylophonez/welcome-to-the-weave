@@ -315,7 +315,7 @@ export default class Cards extends Component {
 
                     onClick={() => this.onTwitterClick()}
                     className='wv-card-button wv-card-button-alt'
-                  >{this.state.verifiedClassTwitter == "success" && <BsCheck />}
+                  >{this.state.verifiedClassTwitter === "success" && <BsCheck />}
                     Tweet to get verified
                   </Button>
                   <Card.Text className='small p-2'>
