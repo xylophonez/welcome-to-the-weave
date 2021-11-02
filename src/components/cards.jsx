@@ -277,7 +277,7 @@ export default class Cards extends Component {
                   {this.state.arconnectInstalled ? (
                     <Button
                       variant='success'
-                      className='wv-card-button wv-card-button-alt'
+                      className='wv-card-button wv-card-button-success'
                     >
                       <BsCheck /> ArConnect installed
                     </Button>
