@@ -1,10 +1,10 @@
 import { React, Component } from 'react'
 import { Button, Card, Container, Row, Col } from 'react-bootstrap'
 import { getVerification } from 'arverify'
-import Twitter from '../assets/twitter.png'
-import Arconnect from '../assets/arconnect2.png'
+import Twitter from '../assets/twitter2021.png'
+import Arconnect from '../assets/arconnect3.png'
 import Arverify from '../assets/arverify2.png'
-import Ardrive from '../assets/ardrive2.png'
+import Ardrive from '../assets/ardrive3.png'
 import { BsCheck } from 'react-icons/bs'
 import Arweave from 'arweave'
 import Swal from 'sweetalert2'
@@ -245,17 +245,17 @@ export default class Cards extends Component {
           </h1>
           <Row className='mt-5'>
             <Col xs={12} md={4} className='mb-5'>
-              <Card border='primary h-100' className=''>
+              <Card border='primary' className='h-100 align-items-center justify-content-between'>
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
                     1
                   </h2>
                 </div>
-                <Card.Title className='mt-5'>
+                <Card.Title>
                   <h5>Get the ArConnect</h5>
                   <h5>Browser wallet extension</h5>
                 </Card.Title>
-                <Card.Img alt='arconnect logo' src={Arconnect} />
+                <Card.Img className='mb-3' style={{maxWidth:'50%'}} alt='arconnect logo' src={Arconnect} />
                 <div className='p-1'>
                   {this.state.arconnectInstalled ? (
                     <Button
@@ -281,17 +281,17 @@ export default class Cards extends Component {
             </Col>
 
             <Col xs={12} md={4} className='mb-5'>
-              <Card border='primary h-100'>
+              <Card border='primary' className='h-100 align-items-center justify-content-between'>
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
                     2
                   </h2>
                 </div>
-                <Card.Title className='mt-5'>
+                <Card.Title>
                   <h5>Tweet to get your 0.02 AR</h5>
                   <h5>tokens (~$1.19 in value) </h5>
                 </Card.Title>
-                <Card.Img alt='ardrive logo' src={Twitter} />
+                <Card.Img alt='ardrive logo' className='mb-3' style={{maxWidth:'50%'}} src={Twitter} />
                 <div className='p-1'>
                   <Button
                     variant={this.state.verifiedClassTwitter || 'default'}
@@ -306,18 +306,18 @@ export default class Cards extends Component {
                 </div>
               </Card>
             </Col>
-            <Col xs={12} md={4} className='mb-5 mb-sm-4'>
-              <Card border='primary h-100'>
+            <Col xs={12} md={4} className='mb-5'>
+              <Card border='primary' className='h-100 align-items-center justify-content-between'>
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
                     3
                   </h2>
                 </div>
-                <Card.Title className='mt-5'>
+                <Card.Title>
                   <h5>Upload your very first</h5>
                   <h5>permaphoto</h5>
                 </Card.Title>
-                <Card.Img alt='ardrive logo' src={Ardrive} />
+                <Card.Img alt='ardrive logo' className='mb-3' style={{maxWidth:'75%'}} src={Ardrive} />
                 <div className='p-1'>
                   <Button
                     variant={this.state.verifiedClass || 'default'}
