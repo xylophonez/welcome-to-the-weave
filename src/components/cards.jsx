@@ -192,11 +192,11 @@ export default class Cards extends Component {
     // } else {
     //   tweetText = verifyAddrTweet
     // }
-      window.open(
-        `https://twitter.com/intent/follow?screen_name=onlyarweave`,
-        '_blank'
-      )
-      this.setState({ verifiedClassTwitter: 'success' })
+    window.open(
+      `https://twitter.com/intent/follow?screen_name=onlyarweave`,
+      '_blank'
+    )
+    this.setState({ verifiedClassTwitter: 'success' })
   }
   /*
     onArDriveClick = async () => {
@@ -243,19 +243,27 @@ export default class Cards extends Component {
           <h1 className='mb-2 p-3 hero-title'>
             Get a limited edition NFT on Arweave.
           </h1>
-          <Row className='mt-5'>
+          <Row className='mt-5 mx-5'>
             <Col xs={12} md={4} className='mb-5'>
-              <Card border='primary' className='h-100 align-items-center justify-content-between'>
+              <Card
+                border='primary'
+                className='h-100 align-items-center justify-content-between'
+              >
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
                     1
                   </h2>
                 </div>
                 <Card.Title>
-                  <h5>Get the ArConnect</h5>
-                  <h5>Browser wallet extension</h5>
+                  <h3>Get the ArConnect</h3>
+                  <h3>wallet browser extension.</h3>
                 </Card.Title>
-                <Card.Img className='mb-3' style={{maxWidth:'50%'}} alt='arconnect logo' src={Arconnect} />
+                <Card.Img
+                  className='mb-3'
+                  style={{ maxWidth: '33%' }}
+                  alt='arconnect logo'
+                  src={Arconnect}
+                />
                 <div className='p-1'>
                   {this.state.arconnectInstalled ? (
                     <Button
@@ -268,66 +276,87 @@ export default class Cards extends Component {
                     <Button
                       onClick={() => this.onInstallArConnectClick()}
                       variant='default'
-                      className='wv-card-button wv-card-button-alt'
+                      className='wv-card-button wv-card-button-alt cta'
                     >
                       Install ArConnect
                     </Button>
                   )}
                   <Card.Text className='small p-2'>
-                    This is where you'll keep your $AR tokens
+                    <p>This is where you'll keep your $AR tokens.</p>
                   </Card.Text>
                 </div>
               </Card>
             </Col>
 
             <Col xs={12} md={4} className='mb-5'>
-              <Card border='primary' className='h-100 align-items-center justify-content-between'>
+              <Card
+                border='primary'
+                className='h-100 align-items-center justify-content-between'
+              >
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
                     2
                   </h2>
                 </div>
                 <Card.Title>
-                  <h5>Tweet to get your 0.02 AR</h5>
-                  <h5>tokens (~$1.19 in value) </h5>
+                  <h3>Follow @onlyarweave, then</h3>
+                  <h3>Tweet to get your 0.02 $AR</h3>
+                  <h3>tokens (~ $2.34 USD value).</h3>
                 </Card.Title>
-                <Card.Img alt='ardrive logo' className='mb-3' style={{maxWidth:'50%'}} src={Twitter} />
+                <Card.Img
+                  alt='ardrive logo'
+                  className='mb-3'
+                  style={{ maxWidth: '28%' }}
+                  src={Twitter}
+                />
                 <div className='p-1'>
                   <Button
                     variant={this.state.verifiedClassTwitter || 'default'}
                     onClick={() => this.onTwitterClick()}
-                    className='wv-card-button wv-card-button-alt'
-                  >{this.state.verifiedClassTwitter === "success" && <BsCheck />}
-                    Tweet to get verified
+                    className='wv-card-button wv-card-button-alt cta'
+                  >
+                    {this.state.verifiedClassTwitter === 'success' && (
+                      <BsCheck />
+                    )}
+                    Tweet to get tokens
                   </Button>
                   <Card.Text className='small p-2'>
-                    We'll need to verify that you're a human
+                    <p className='m-0'>We’ll verify that you’re a human.</p>
+                    <a href='/'>Need more info?</a>
                   </Card.Text>
                 </div>
               </Card>
             </Col>
             <Col xs={12} md={4} className='mb-5'>
-              <Card border='primary' className='h-100 align-items-center justify-content-between'>
+              <Card
+                border='primary'
+                className='h-100 align-items-center justify-content-between'
+              >
                 <div className='d-flex justify-content-center'>
                   <h2 className='step d-flex justify-content-center align-items-center'>
                     3
                   </h2>
                 </div>
                 <Card.Title>
-                  <h5>Upload your very first</h5>
-                  <h5>permaphoto</h5>
+                  <h3>Upload your very first</h3>
+                  <h3>permaphoto</h3>
                 </Card.Title>
-                <Card.Img alt='ardrive logo' className='mb-3' style={{maxWidth:'75%'}} src={Ardrive} />
+                <Card.Img
+                  alt='ardrive logo'
+                  className='mb-3'
+                  style={{ maxWidth: '75%' }}
+                  src={Ardrive}
+                />
                 <div className='p-1'>
                   <Button
                     variant={this.state.verifiedClass || 'default'}
-                    className='wv-card-button wv-card-button-alt'
+                    className='wv-card-button wv-card-button-alt cta'
                     onClick={() => this.onArVerifyClick()}
                   >
                     {this.verificationStatus()}
                   </Button>
                   <Card.Text className='small p-2'>
-                    Upload a photo for free
+                    <p>Upload a photo for free</p>
                   </Card.Text>
                 </div>
               </Card>
