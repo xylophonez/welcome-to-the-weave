@@ -243,8 +243,8 @@ export default class Cards extends Component {
           <h1 className='mb-2 p-3 hero-title'>
             Get a limited edition NFT on Arweave.
           </h1>
-          <Row className='mt-5 mx-5'>
-            <Col xs={12} md={4} className='mb-5'>
+          <Row className='mt-5 mx-5 mx-md-3 trio'>
+            <Col xs={12} md={4} className='mb-5 px-4'>
               <Card
                 border='primary'
                 className='h-100 align-items-center justify-content-between'
@@ -254,7 +254,7 @@ export default class Cards extends Component {
                     1
                   </h2>
                 </div>
-                <Card.Title>
+                <Card.Title className='card-title'>
                   <h3>Get the ArConnect</h3>
                   <h3>wallet browser extension.</h3>
                 </Card.Title>
@@ -264,11 +264,11 @@ export default class Cards extends Component {
                   alt='arconnect logo'
                   src={Arconnect}
                 />
-                <div className='p-1'>
+                <div className='p-3 w-100'>
                   {this.state.arconnectInstalled ? (
                     <Button
                       variant='success'
-                      className='wv-card-button wv-card-button-success'
+                      className='wv-card-button wv-card-button-success cta w-100'
                     >
                       <BsCheck /> ArConnect installed
                     </Button>
@@ -276,7 +276,7 @@ export default class Cards extends Component {
                     <Button
                       onClick={() => this.onInstallArConnectClick()}
                       variant='default'
-                      className='wv-card-button wv-card-button-alt cta'
+                      className='wv-card-button wv-card-button-alt cta w-100'
                     >
                       Install ArConnect
                     </Button>
@@ -288,7 +288,7 @@ export default class Cards extends Component {
               </Card>
             </Col>
 
-            <Col xs={12} md={4} className='mb-5'>
+            <Col xs={12} md={4} className='mb-5 px-4'>
               <Card
                 border='primary'
                 className='h-100 align-items-center justify-content-between'
@@ -298,8 +298,8 @@ export default class Cards extends Component {
                     2
                   </h2>
                 </div>
-                <Card.Title>
-                  <h3>Follow @onlyarweave, then</h3>
+                <Card.Title className='card-title'>
+                  <h3>Follow <b>@onlyarweave</b>, then</h3>
                   <h3>Tweet to get your 0.02 $AR</h3>
                   <h3>tokens (~ $2.34 USD value).</h3>
                 </Card.Title>
@@ -309,11 +309,11 @@ export default class Cards extends Component {
                   style={{ maxWidth: '28%' }}
                   src={Twitter}
                 />
-                <div className='p-1'>
+                <div className='p-3 w-100'>
                   <Button
                     variant={this.state.verifiedClassTwitter || 'default'}
                     onClick={() => this.onTwitterClick()}
-                    className='wv-card-button wv-card-button-alt cta'
+                    className='wv-card-button wv-card-button-alt cta w-100'
                   >
                     {this.state.verifiedClassTwitter === 'success' && (
                       <BsCheck />
@@ -327,7 +327,7 @@ export default class Cards extends Component {
                 </div>
               </Card>
             </Col>
-            <Col xs={12} md={4} className='mb-5'>
+            <Col xs={12} md={4} className='mb-5 px-4'>
               <Card
                 border='primary'
                 className='h-100 align-items-center justify-content-between'
@@ -337,7 +337,7 @@ export default class Cards extends Component {
                     3
                   </h2>
                 </div>
-                <Card.Title>
+                <Card.Title className='card-title'>
                   <h3>Upload your very first</h3>
                   <h3>permaphoto</h3>
                 </Card.Title>
@@ -347,10 +347,10 @@ export default class Cards extends Component {
                   style={{ maxWidth: '75%' }}
                   src={Ardrive}
                 />
-                <div className='p-1'>
+                <div className='p-3 w-100'>
                   <Button
                     variant={this.state.verifiedClass || 'default'}
-                    className='wv-card-button wv-card-button-alt cta'
+                    className='wv-card-button wv-card-button-alt cta w-100'
                     onClick={() => this.onArVerifyClick()}
                   >
                     {this.verificationStatus()}

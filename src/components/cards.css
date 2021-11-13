@@ -14,7 +14,6 @@
 
 h3 {
   font-size: 1rem;
-  font-weight: 600;
 }
 
 p {
@@ -23,4 +22,16 @@ p {
 
 .cta {
   font-size: 1rem;
+  border-radius: 15px;
+}
+
+.card-title {
+  min-height: 81px;
+}
+
+@media (min-width: 992px) {
+.trio {
+    margin-left: 7% !important;
+    margin-right: 7% !important;
+  }
 }
