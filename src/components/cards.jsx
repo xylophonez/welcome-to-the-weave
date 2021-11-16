@@ -298,7 +298,7 @@ export default class Cards extends Component {
                     2
                   </h2>
                 </div>
-                <Card.Title className='card-title'>
+                <Card.Title className='card-title mt-sm-2'>
                   <h3>Follow <b>@onlyarweave</b>, then</h3>
                   <h3>Tweet to get your 0.02 $AR</h3>
                   <h3>tokens (~ $2.34 USD value).</h3>
