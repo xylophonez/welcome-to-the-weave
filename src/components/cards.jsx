@@ -281,8 +281,8 @@ export default class Cards extends Component {
                       Install ArConnect
                     </Button>
                   )}
-                  <Card.Text className='small p-2'>
-                    <p>This is where you'll keep your $AR tokens.</p>
+                  <Card.Text className='small p-2 card-footer-text'>
+                    <p className='m-0'>This is where you'll keep your $AR tokens.</p>
                   </Card.Text>
                 </div>
               </Card>
@@ -320,9 +320,8 @@ export default class Cards extends Component {
                     )}
                     Tweet to get tokens
                   </Button>
-                  <Card.Text className='small p-2'>
-                    <p className='m-0'>We’ll verify that you’re a human.</p>
-                    <a href='/'>Need more info?</a>
+                  <Card.Text className='small p-2 card-footer-text'>
+                    <p className='m-0'>We’ll verify that you’re a human. <a href='/'>Need more info?</a></p>
                   </Card.Text>
                 </div>
               </Card>
@@ -355,8 +354,8 @@ export default class Cards extends Component {
                   >
                     {this.verificationStatus()}
                   </Button>
-                  <Card.Text className='small p-2'>
-                    <p>Upload a photo for free</p>
+                  <Card.Text className='small p-2 card-footer-text'>
+                    <p className='m-0'>Upload a photo for free</p>
                   </Card.Text>
                 </div>
               </Card>
