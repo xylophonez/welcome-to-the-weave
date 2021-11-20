@@ -1,13 +1,41 @@
 .step {
-  height: 64px;
-  width: 64px;
+  height: 74px;
+  width: 74px;
   border: 4px solid #E5E5E5;
   border-radius: 50%;
-  margin-top: -2rem;
+  margin-top: -2.275rem;
   z-index: 2;
   padding: 3px;
   color: #4A4A4A;
   font-size: 1.75rem;
   font-weight: 700;
   background-color: #FFFFFF;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: .875rem;
+}
+
+.cta {
+  font-size: 1rem;
+  border-radius: 15px;
+}
+
+.card-title {
+  min-height: 81px;
+}
+
+.card-footer-text {
+  min-height: 60px;
+}
+
+@media (min-width: 992px) {
+.trio {
+    margin-left: 7% !important;
+    margin-right: 7% !important;
+  }
 }
