@@ -243,7 +243,7 @@ export default class Cards extends Component {
           <h1 className='mb-2 p-3 hero-title'>
             Get a limited edition NFT on Arweave.
           </h1>
-          <Row className='mt-5 mx-5 mx-md-3 trio'>
+          <Row className='mt-5 mx-md-3 trio'>
             <Col xs={12} md={4} className='mb-5 px-4'>
               <Card
                 border='primary'
@@ -299,9 +299,9 @@ export default class Cards extends Component {
                   </h2>
                 </div>
                 <Card.Title className='card-title mt-sm-2'>
-                  <h3>Follow <b>@onlyarweave</b>, then</h3>
-                  <h3>Tweet to get your 0.02 $AR</h3>
-                  <h3>tokens (~ $2.34 USD value).</h3>
+                  <h3 className="mx-4">Follow <b>@onlyarweave</b>, then
+                  Tweet to get your 0.02 $AR
+                  tokens (~ $2.34 USD value).</h3>
                 </Card.Title>
                 <Card.Img
                   alt='ardrive logo'
