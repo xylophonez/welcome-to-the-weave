@@ -39,3 +39,7 @@ p {
     margin-right: 7% !important;
   }
 }
+
+.btn:hover {
+  color: #FFFFFF !important;
+}

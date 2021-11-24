@@ -255,8 +255,7 @@ export default class Cards extends Component {
                   </h2>
                 </div>
                 <Card.Title className='card-title'>
-                  <h3>Get the ArConnect</h3>
-                  <h3>wallet browser extension.</h3>
+                  <h3 className="mx-4">Get the ArConnect wallet browser extension.</h3>
                 </Card.Title>
                 <Card.Img
                   className='mb-3'
@@ -337,8 +336,7 @@ export default class Cards extends Component {
                   </h2>
                 </div>
                 <Card.Title className='card-title'>
-                  <h3>Upload your very first</h3>
-                  <h3>permaphoto</h3>
+                  <h3 className="mx-4">Upload your very first permaphoto.</h3>
                 </Card.Title>
                 <Card.Img
                   alt='ardrive logo'
